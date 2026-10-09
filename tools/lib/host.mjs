@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import http from 'node:http';
 import https from 'node:https';
 import zlib from 'node:zlib';
+import crypto from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
 const USER_AGENT =
@@ -222,6 +223,26 @@ export const HOST_VERSION = '0.0.0-harness';
  * `options`: { systemDns, timeoutMs, trace, anilili } — `anilili: false` leaves `$anilili` out,
  * which is how a plugin sees a host other than Anilili.
  */
+// The one part of the runtime's CryptoJS the plugins here use: AES-CBC decryption of base64
+// text with a key and an IV given as bytes, read back as UTF-8.
+function cryptoSubset() {
+  const Utf8 = { stringify: (bytes) => Buffer.from(bytes).toString('utf8') };
+  return {
+    enc: { Utf8 },
+    AES: {
+      decrypt(message, key, config) {
+        const keyBytes = Buffer.from(key);
+        if (![16, 24, 32].includes(keyBytes.length) || !config || !config.iv) {
+          throw new Error('this test harness only decrypts AES-CBC with a key and an IV given as bytes');
+        }
+        const decipher = crypto.createDecipheriv(`aes-${keyBytes.length * 8}-cbc`, keyBytes, Buffer.from(config.iv));
+        const plain = Buffer.concat([decipher.update(Buffer.from(String(message), 'base64')), decipher.final()]);
+        return { toString: (encoder) => (encoder === Utf8 ? Utf8.stringify(plain) : plain.toString('base64')) };
+      },
+    },
+  };
+}
+
 export function createContext(options = {}) {
   const settings = {
     systemDns: Boolean(options.systemDns),
@@ -255,6 +276,7 @@ export function createContext(options = {}) {
     LoadDoc: () => {
       throw new Error('LoadDoc is not provided by this test harness');
     },
+    CryptoJS: cryptoSubset(),
     Buffer,
     atob,
     btoa,

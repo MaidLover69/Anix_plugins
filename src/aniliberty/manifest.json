@@ -1,0 +1,14 @@
+{
+  "id": "aniliberty",
+  "name": "AniLiberty",
+  "version": "1.0.0",
+  "description": "AniLiberty (formerly AniLibria): Russian voice-over in up to 1080p, with opening/ending times (HLS).",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "ru",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/aniliberty.svg",
+  "website": "https://aniliberty.top",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/aniliberty/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/aniliberty/provider.js"
+}

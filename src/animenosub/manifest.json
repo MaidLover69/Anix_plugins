@@ -1,0 +1,14 @@
+{
+  "id": "animenosub",
+  "name": "Animenosub",
+  "version": "1.0.0",
+  "description": "Animenosub: sub and dub (HLS) from the MegaPlay and Vidmoly players.",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animenosub.svg",
+  "website": "https://animenosub.to",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animenosub/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animenosub/provider.js"
+}

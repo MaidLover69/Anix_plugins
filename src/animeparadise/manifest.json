@@ -1,0 +1,14 @@
+{
+  "id": "animeparadise",
+  "name": "AnimeParadise",
+  "version": "1.0.0",
+  "description": "AnimeParadise: original audio with soft subtitles and intro/outro times (HLS).",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animeparadise.svg",
+  "website": "https://www.animeparadise.moe",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animeparadise/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animeparadise/provider.js"
+}

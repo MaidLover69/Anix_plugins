@@ -2,6 +2,11 @@
 // Validates the repository without touching the network: index.json, every manifest and every
 // payload. Exits with status 1 when anything is wrong.
 //
+// index.json holds two kinds of entries. A plugin of this repository is its whole manifest and
+// has a folder under src/. A community plugin is a reference: its `manifestURI` points at the
+// manifest in its author's repository, and it carries neither a version nor the code, so the
+// app reads both from there and follows the author's updates.
+//
 //   node tools/check.mjs
 
 import vm from 'node:vm';
@@ -13,6 +18,9 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const RAW_BASE = 'https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main';
 const REQUIRED = ['id', 'name', 'version', 'author', 'description', 'type', 'language', 'lang', 'manifestURI'];
 const METHODS = ['getSettings', 'search', 'findEpisodes', 'findEpisodeServer'];
+const REFERENCE_REQUIRED = ['id', 'name', 'author', 'description', 'type', 'lang', 'website', 'manifestURI'];
+const REFERENCE_ALLOWED = [...REFERENCE_REQUIRED, 'icon'];
+const REFERENCE_HOST = 'raw.githubusercontent.com';
 
 const problems = [];
 const fail = (where, message) => problems.push(`${where}: ${message}`);
@@ -183,21 +191,73 @@ async function checkManifest(where, manifest, folderId) {
   }
 }
 
+// A plugin of this repository names its manifest here; anything else is a community reference.
+function isReference(entry) {
+  return typeof entry.manifestURI === 'string' && !entry.manifestURI.startsWith(`${RAW_BASE}/`);
+}
+
+function checkReference(where, entry) {
+  for (const field of REFERENCE_REQUIRED) {
+    if (typeof entry[field] !== 'string' || !entry[field].trim()) fail(where, `"${field}" is missing or empty`);
+  }
+  for (const field of Object.keys(entry)) {
+    if (field === 'version' || field === 'payload' || field === 'payloadURI') {
+      fail(where, `a community reference must not carry "${field}": the app takes it from the author's manifest`);
+    } else if (!REFERENCE_ALLOWED.includes(field)) {
+      fail(where, `unexpected field "${field}" in a community reference`);
+    }
+  }
+  const id = entry.id;
+  // The id is the author's; the app accepts letters, digits, dashes and underscores.
+  if (typeof id === 'string' && !/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(id)) fail(where, `id "${id}" is not a usable plugin id`);
+  if (entry.type !== 'onlinestream-provider') fail(where, `type must be "onlinestream-provider" (is "${entry.type}")`);
+  if (typeof entry.author === 'string' && entry.author.trim().toLowerCase() === 'anilili') {
+    fail(where, 'a community reference names its own author, not Anilili');
+  }
+  let manifestUrl = null;
+  try {
+    manifestUrl = new URL(entry.manifestURI);
+  } catch {
+    manifestUrl = null;
+  }
+  if (!manifestUrl || manifestUrl.protocol !== 'https:') fail(where, '"manifestURI" is not an https URL');
+  else if (manifestUrl.host !== REFERENCE_HOST) fail(where, `"manifestURI" must be a file on ${REFERENCE_HOST}`);
+  else if (!manifestUrl.pathname.toLowerCase().endsWith('.json')) fail(where, '"manifestURI" must name a .json manifest');
+  // `website` is the repository the plugin is maintained in.
+  if (typeof entry.website === 'string' && !/^https:\/\/github\.com\/[^/]+\/[^/]+$/.test(entry.website)) {
+    fail(where, '"website" must be the https://github.com/<owner>/<repo> the plugin is maintained in');
+  } else if (manifestUrl && typeof entry.website === 'string') {
+    const owner = entry.website.split('/')[3].toLowerCase();
+    if (manifestUrl.pathname.split('/')[1].toLowerCase() !== owner) fail(where, '"manifestURI" is not in the repository "website" names');
+  }
+  if (entry.icon !== undefined && entry.icon !== '' && !isHttpsUrl(entry.icon)) fail(where, '"icon" is not an https URL');
+  if (typeof id === 'string' && existsSync(join(ROOT, 'src', id))) fail(where, `src/${id}/ exists: a community reference has no code here`);
+}
+
 async function main() {
   const index = readJson(join(ROOT, 'index.json'), 'index.json');
   if (index !== null && !Array.isArray(index)) fail('index.json', 'must be an array of manifests');
   const entries = Array.isArray(index) ? index : [];
 
   const seen = new Set();
+  let references = 0;
   for (const [position, entry] of entries.entries()) {
     const where = `index.json[${position}]${entry && entry.id ? ` (${entry.id})` : ''}`;
     if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
       fail(where, 'is not a manifest object');
       continue;
     }
+    // Ids are compared without case: the app keeps one plugin per id and files per id.
+    const key = typeof entry.id === 'string' ? entry.id.toLowerCase() : entry.id;
+    if (seen.has(key)) fail(where, `id "${entry.id}" appears more than once`);
+    seen.add(key);
+    if (isReference(entry)) {
+      references += 1;
+      checkReference(where, entry);
+      continue;
+    }
+    if (references > 0) fail(where, 'plugins of this repository come before the community references');
     await checkManifest(where, entry);
-    if (seen.has(entry.id)) fail(where, `id "${entry.id}" appears more than once`);
-    seen.add(entry.id);
     if (typeof entry.id === 'string' && !existsSync(join(ROOT, 'src', entry.id, 'manifest.json'))) {
       fail(where, `src/${entry.id}/manifest.json does not exist`);
     }
@@ -244,7 +304,8 @@ async function main() {
     process.stderr.write(`\n${problems.length} problem${problems.length === 1 ? '' : 's'}\n`);
     process.exit(1);
   }
-  process.stdout.write(`ok: ${entries.length} plugin${entries.length === 1 ? '' : 's'} in index.json, ${folders.length} under src/ (${folders.join(', ')})\n`);
+  const own = entries.length - references;
+  process.stdout.write(`ok: ${entries.length} plugin${entries.length === 1 ? '' : 's'} in index.json: ${own} under src/ (${folders.join(', ')}), ${references} community reference${references === 1 ? '' : 's'}\n`);
 }
 
 main().catch((error) => {
