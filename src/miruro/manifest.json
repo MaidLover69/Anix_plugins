@@ -1,0 +1,14 @@
+{
+  "id": "miruro",
+  "name": "Miruro",
+  "version": "1.0.0",
+  "description": "Miruro: sub (soft and hard subtitles) and dub from several upstream sites, found by AniList id, with intro/outro times. Requires Anilili.",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/miruro.svg",
+  "website": "https://www.miruro.bz",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/miruro/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/miruro/provider.js"
+}

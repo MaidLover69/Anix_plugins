@@ -1,0 +1,14 @@
+{
+  "id": "animegg",
+  "name": "AnimeGG",
+  "version": "1.0.0",
+  "description": "AnimeGG: sub and dub as direct MP4 files in several qualities.",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animegg.svg",
+  "website": "https://www.animegg.org",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animegg/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animegg/provider.js"
+}

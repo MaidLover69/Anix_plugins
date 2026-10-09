@@ -1,0 +1,14 @@
+{
+  "id": "kickassanime",
+  "name": "KickAssAnime",
+  "version": "1.0.0",
+  "description": "KickAssAnime: sub and dub with soft subtitles (HLS).",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/kickassanime.svg",
+  "website": "https://kaa.lt",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/kickassanime/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/kickassanime/provider.js"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "anizone",
+  "name": "AniZone",
+  "version": "1.0.0",
+  "description": "AniZone: original audio with soft subtitles in several languages (HLS).",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/anizone.svg",
+  "website": "https://anizone.to",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/anizone/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/anizone/provider.js"
+}

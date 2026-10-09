@@ -1,0 +1,58 @@
+[
+  {
+    "id": "miruro",
+    "name": "Miruro",
+    "version": "1.0.0",
+    "description": "Miruro: sub (soft and hard subtitles) and dub from several upstream sites, found by AniList id, with intro/outro times. Requires Anilili.",
+    "author": "Anilili",
+    "type": "onlinestream-provider",
+    "language": "javascript",
+    "lang": "en",
+    "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/miruro.svg",
+    "website": "https://www.miruro.bz",
+    "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/miruro/manifest.json",
+    "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/miruro/provider.js"
+  },
+  {
+    "id": "anizone",
+    "name": "AniZone",
+    "version": "1.0.0",
+    "description": "AniZone: original audio with soft subtitles in several languages (HLS).",
+    "author": "Anilili",
+    "type": "onlinestream-provider",
+    "language": "javascript",
+    "lang": "en",
+    "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/anizone.svg",
+    "website": "https://anizone.to",
+    "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/anizone/manifest.json",
+    "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/anizone/provider.js"
+  },
+  {
+    "id": "kickassanime",
+    "name": "KickAssAnime",
+    "version": "1.0.0",
+    "description": "KickAssAnime: sub and dub with soft subtitles (HLS).",
+    "author": "Anilili",
+    "type": "onlinestream-provider",
+    "language": "javascript",
+    "lang": "en",
+    "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/kickassanime.svg",
+    "website": "https://kaa.lt",
+    "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/kickassanime/manifest.json",
+    "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/kickassanime/provider.js"
+  },
+  {
+    "id": "animegg",
+    "name": "AnimeGG",
+    "version": "1.0.0",
+    "description": "AnimeGG: sub and dub as direct MP4 files in several qualities.",
+    "author": "Anilili",
+    "type": "onlinestream-provider",
+    "language": "javascript",
+    "lang": "en",
+    "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animegg.svg",
+    "website": "https://www.animegg.org",
+    "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animegg/manifest.json",
+    "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animegg/provider.js"
+  }
+]
