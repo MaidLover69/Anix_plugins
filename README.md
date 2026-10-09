@@ -94,8 +94,6 @@ repositories.
 | Plugin | id | Author | Repository | Language | Audio | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | AnimeAV1 | `animeav1` | jabifx & yerasuu | [Seanime-contributions/Seanime-Providers](https://github.com/Seanime-contributions/Seanime-Providers) (MIT) | Spanish | Spanish subtitles, Latin American dub | Working, 2026-10-09 |
-| AnimeSaturn | `animesaturn` | kRYstall9 | [kRYstall9/Seanime-streaming-providers](https://github.com/kRYstall9/Seanime-streaming-providers) (MIT) | Italian | Italian subtitles, Italian dub | Working, 2026-10-09 |
-| AnimeWorld | `animeworld` | kRYstall9 | [kRYstall9/Seanime-streaming-providers](https://github.com/kRYstall9/Seanime-streaming-providers) (MIT) | Italian | Italian subtitles, Italian dub | Working, 2026-10-09 |
 
 Checked the same way as the plugins above. A community plugin is referenced only when it
 passes that check unchanged and its repository carries a licence that allows redistribution.
@@ -103,6 +101,8 @@ passes that check unchanged and its repository carries a licence that allows red
 Other Seanime repositories can be added to the app next to this one, by their own link.
 
 ### Not available
+
+- **AnimeSaturn, AnimeWorld** (Italian, community plugins by kRYstall9): they resolve streams, but the video did not load in the app's player when tested on 2026-10-09, so they are not listed in `index.json` yet.
 
 Sources of earlier versions of the app, and sites and community plugins that were tried, which
 did not yield a playable stream from the test network on 2026-10-09. That network blocks some

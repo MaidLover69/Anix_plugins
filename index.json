@@ -176,25 +176,5 @@
     "lang": "es",
     "website": "https://github.com/Seanime-contributions/Seanime-Providers",
     "manifestURI": "https://raw.githubusercontent.com/Seanime-contributions/Seanime-Providers/main/src/anime/AnimeAV1/manifest.json"
-  },
-  {
-    "id": "animesaturn",
-    "name": "AnimeSaturn",
-    "description": "AnimeSaturn: Italian subtitles and Italian dub. Maintained by its author in kRYstall9/Seanime-streaming-providers.",
-    "author": "kRYstall9",
-    "type": "onlinestream-provider",
-    "lang": "it",
-    "website": "https://github.com/kRYstall9/Seanime-streaming-providers",
-    "manifestURI": "https://raw.githubusercontent.com/kRYstall9/Seanime-streaming-providers/main/src/AnimeSaturn/manifest.json"
-  },
-  {
-    "id": "animeworld",
-    "name": "AnimeWorld",
-    "description": "AnimeWorld: Italian subtitles and Italian dub. Maintained by its author in kRYstall9/Seanime-streaming-providers.",
-    "author": "kRYstall9",
-    "type": "onlinestream-provider",
-    "lang": "it",
-    "website": "https://github.com/kRYstall9/Seanime-streaming-providers",
-    "manifestURI": "https://raw.githubusercontent.com/kRYstall9/Seanime-streaming-providers/main/src/AnimeWorld/manifest.json"
   }
 ]
