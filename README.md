@@ -94,9 +94,14 @@ repositories.
 | Plugin | id | Author | Repository | Language | Audio | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | AnimeAV1 | `animeav1` | jabifx & yerasuu | [Seanime-contributions/Seanime-Providers](https://github.com/Seanime-contributions/Seanime-Providers) (MIT) | Spanish | Spanish subtitles, Latin American dub | Working, 2026-10-09 |
+| VoirAnime | `voir-anime-online-streaming` | LdCm | [3ldcm/seanime-extensions](https://github.com/3ldcm/seanime-extensions) (no licence stated) | French | VOSTFR, French dub | Working, 2026-10-09 |
+| VoirAnime V2 | `voir-anime-v2-online-streaming` | LdCm | [3ldcm/seanime-extensions](https://github.com/3ldcm/seanime-extensions) (no licence stated) | French | VOSTFR, French dub | Working, 2026-10-09 |
+| TioAnime | `tioanime` | mohaisreal | [mohaisreal/seanime-ext](https://github.com/mohaisreal/seanime-ext) (no licence stated) | Spanish | Spanish subtitles | Working, 2026-10-09 |
+| AnimeX | `animex-online-streaming` | Jae | [DefnoJae/Seanime-provider](https://github.com/DefnoJae/Seanime-provider) (no licence stated) | English | Sub, dub | Working, 2026-10-09 |
 
 Checked the same way as the plugins above. A community plugin is referenced only when it
-passes that check unchanged and its repository carries a licence that allows redistribution.
+passes that check unchanged. Their code is never copied here; where a repository states no
+licence, that is noted in the table.
 
 Other Seanime repositories can be added to the app next to this one, by their own link.
 

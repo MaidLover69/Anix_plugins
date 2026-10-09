@@ -176,5 +176,45 @@
     "lang": "es",
     "website": "https://github.com/Seanime-contributions/Seanime-Providers",
     "manifestURI": "https://raw.githubusercontent.com/Seanime-contributions/Seanime-Providers/main/src/anime/AnimeAV1/manifest.json"
+  },
+  {
+    "id": "voir-anime-online-streaming",
+    "name": "VoirAnime",
+    "description": "VoirAnime: French subtitles (VOSTFR) and French dub. Maintained by its author in 3ldcm/seanime-extensions.",
+    "author": "LdCm",
+    "type": "onlinestream-provider",
+    "lang": "fr",
+    "website": "https://github.com/3ldcm/seanime-extensions",
+    "manifestURI": "https://raw.githubusercontent.com/3ldcm/seanime-extensions/main/voir-anime/manifest.json"
+  },
+  {
+    "id": "voir-anime-v2-online-streaming",
+    "name": "VoirAnime V2",
+    "description": "VoirAnime V2 (experimental): French subtitles and French dub. Maintained by its author in 3ldcm/seanime-extensions.",
+    "author": "LdCm",
+    "type": "onlinestream-provider",
+    "lang": "fr",
+    "website": "https://github.com/3ldcm/seanime-extensions",
+    "manifestURI": "https://raw.githubusercontent.com/3ldcm/seanime-extensions/main/voir-anime-v2/manifest.json"
+  },
+  {
+    "id": "tioanime",
+    "name": "TioAnime",
+    "description": "TioAnime: Spanish subtitles. Maintained by its author in mohaisreal/seanime-ext.",
+    "author": "mohaisreal",
+    "type": "onlinestream-provider",
+    "lang": "es",
+    "website": "https://github.com/mohaisreal/seanime-ext",
+    "manifestURI": "https://raw.githubusercontent.com/mohaisreal/seanime-ext/main/src/TioAnime/manifest.json"
+  },
+  {
+    "id": "animex-online-streaming",
+    "name": "AnimeX",
+    "description": "AnimeX: English sub and dub. Maintained by its author in DefnoJae/Seanime-provider.",
+    "author": "Jae",
+    "type": "onlinestream-provider",
+    "lang": "en",
+    "website": "https://github.com/DefnoJae/Seanime-provider",
+    "manifestURI": "https://raw.githubusercontent.com/DefnoJae/Seanime-provider/main/Manifest.json"
   }
 ]
