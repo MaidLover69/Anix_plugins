@@ -1,0 +1,14 @@
+{
+  "id": "animepahe",
+  "name": "AnimePahe",
+  "version": "1.0.0",
+  "description": "AnimePahe: sub and dub (HLS, 360p to 1080p) from the Kwik player. The site asks for a browser check; verify it in the app when asked.",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animepahe.svg",
+  "website": "https://animepahe.pw",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animepahe/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animepahe/provider.js"
+}

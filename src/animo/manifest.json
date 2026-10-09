@@ -1,0 +1,14 @@
+{
+  "id": "animo",
+  "name": "Animo",
+  "version": "1.0.0",
+  "description": "Animo: sub and dub (HLS) with soft subtitles and intro/outro times.",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "en",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animo.svg",
+  "website": "https://4animo.xyz",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animo/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animo/provider.js"
+}

@@ -75,6 +75,11 @@ plugin updates arrive without reinstalling anything.
 | Animenosub | `animenosub` | English | sub, dub | HLS from the MegaPlay and Vidmoly players; the other players of the site are not read. The site's search is slow at times | Working, 2026-10-09 |
 | AnimeParadise | `animeparadise` | English | sub | HLS with soft subtitles and intro/outro times | Working, 2026-10-09 |
 | AniLiberty | `aniliberty` | Russian | Russian voice-over | HLS in 480p, 720p and 1080p, with opening/ending times. Formerly AniLibria. Offered as the regular (not "dub") audio | Working, 2026-10-09 |
+| Animo | `animo` | English | sub, dub | HLS from the site's own players (three servers), with soft subtitles and intro/outro times. The site is `4animo.xyz` | Working, 2026-10-09 |
+| AnimeSaturn | `animesaturn` | Italian | Italian subtitles, Italian dub | HLS or MP4 from the site's own player; subtitles are part of the picture | Working, 2026-10-09 |
+| AnimeWorld | `animeworld` | Italian | Italian subtitles, Italian dub | MP4; subtitles are part of the picture | Working, 2026-10-09 |
+| Animevost | `animevost` | Russian | Russian voice-over | MP4 in 720p and 480p. Offered as the regular (not "dub") audio | Working, 2026-10-09 |
+| Oploverz | `oploverz` | Indonesian | Indonesian subtitles | MP4 hosted on Blogger, 360p or 720p; subtitles are part of the picture. Episodes the site offers only on other players are not read | Working, 2026-10-09 |
 
 "Working" means: checked on the given date in Anilili's own plugin runtime, the way the app
 plays an episode (search, title matching, episode list, server choice, and the stream fetched
@@ -83,6 +88,22 @@ audio version the plugin offers.
 
 Miruro's answers are compressed and obfuscated, which takes helpers only Anilili provides. In
 another host it fails with "requires Anilili". The other plugins use Seanime's globals only.
+
+Animo, AnimeSaturn, AnimeWorld, Animevost, Oploverz and AnimePahe were written after the
+Aniyomi extensions for the same sites; each of those files names its reference in its first
+lines.
+
+### Needs verification in the app
+
+These sites answer every plain request with a browser check (Cloudflare). The plugin makes
+ordinary requests to the site; when Anilili sees the check it offers **Verify**, the check is
+passed once in a window of the app, and the requests are repeated through that session. The
+plugins do nothing to get around a check. Outside Anilili they fail with "blocked by the site's
+bot protection".
+
+| Plugin | id | Language | Audio | Streams | Checked on 2026-10-09 | Not checked |
+| --- | --- | --- | --- | --- | --- | --- |
+| AnimePahe | `animepahe` | English | sub, dub | HLS from the Kwik player, 360p to 1080p; subtitles are part of the picture. A series of more than 180 episodes is listed from its first page and the rest is numbered on | In Anilili's runtime the first request is answered "blocked by anti-bot check", as expected. Search, episode lists (short, long, a sequel that goes on counting, half episodes), the choice of sub or dub players and the reading of the player's packed script were run against responses built after the site's documented API and page markup; the script unpacker also against a live page of another host | Everything against the live site: no request to `animepahe.pw` got past the check from the test network, and no Kwik page was fetched |
 
 ### Community plugins (maintained by their authors)
 
@@ -107,7 +128,7 @@ Other Seanime repositories can be added to the app next to this one, by their ow
 
 ### Not available
 
-- **AnimeSaturn, AnimeWorld** (Italian, community plugins by kRYstall9): they resolve streams, but the video did not load in the app's player when tested on 2026-10-09, so they are not listed in `index.json` yet.
+- **AnimeSaturn, AnimeWorld** (Italian, community plugins by kRYstall9): they resolve streams, but the video did not load in the app's player when tested on 2026-10-09, so they are not referenced. Both sites are covered by the plugins of this repository above, which passed the runtime check; playback of those in the app's player has not been looked at.
 
 Sources of earlier versions of the app, and sites and community plugins that were tried, which
 did not yield a playable stream from the test network on 2026-10-09. That network blocks some
@@ -122,7 +143,7 @@ Sources of earlier versions of the app:
 | Anikoto | The old API is gone. The site is available again as the Anikoto plugin (`anikototv.to`) |
 | AnimeHeaven | `animeheaven.me` resets most connections (one of three attempts to play succeeded); its episode list of long series is incomplete |
 | AnimeKai | `animekai.to` and `anikai.to` do not resolve, `animekai.ac` resets the connection, `animekai.bz` is parked. `animekaitv.to` is a copy of Anikoto |
-| AnimePahe | `animepahe.pw` (where `.com` and `.org` lead) answers with a Cloudflare challenge (HTTP 403); `animepahe.si` resets the connection |
+| AnimePahe | `animepahe.pw` (where `.com` and `.org` lead) answers with a Cloudflare challenge (HTTP 403); `animepahe.si` resets the connection. Available as the AnimePahe plugin once verified in the app (see above) |
 | AnimeShqip | The old addresses are gone; `animeshqip.org` only announces a move to another address, which was not examined |
 | Senshi | `senshi.to` lists anime and episodes, but its video service answers "404" to plain requests and the site's player is obfuscated |
 
@@ -139,6 +160,20 @@ Other sites that were tried:
 | Sudatchi, AniCrush, Animetsu, Animelok, AniPlay, Animension, AnimeOwl, YugenAnime | Down, parked, closed or not resolving |
 | Anime-Sama, French-Anime, JKAnime, AnimeUnity, AniWorld, AnimesOnlineCC, Anitube, Goyabu, Hinata Soul, Dattebayo BR, OgladajAnime | Cloudflare or DDoS-Guard challenge |
 | AnimeFLV, Anime Ultra, Animes Tokyo, DMLAC | Timeout or connection closed |
+| AniChan | Episode counts answer; the list of players needs a signed session the site's script builds in the browser |
+| WitAnime (`witanime.site`) | Search, episode lists and player names answer; the page that hands out a player answers "404" to plain requests |
+| Anime-Stream (`anime-stream.to`) | Every episode link opens a Turnstile form |
+| Xanime | Works for short series; episodes beyond the 50 shown load through a call that changes with every build of the site |
+| AniNeko | The site answered with a database error |
+| AnimeToast | One Piece is split over range pages and its subtitled version starts at episode 892; not finished |
+| MonosChinos | Search and players answer, the episode list is behind a Cloudflare challenge; most players of old episodes are deleted |
+| BetterAnime, Animes Digital | Episode lists load page by page, newest first, 50 at a time or through a separate call; not finished |
+| AsyaAnimeleri | Carries One Piece from episode 1071 only; players differ from show to show |
+| Okanime | The search address redirects and loses the query |
+| WatchAnimeWorld | The site's own player answered "No playable source" |
+| AnimeXin, AnimeKhor, LMAnime, LuciferDonghua | Chinese animation; their main player is Dailymotion, whose playlists answered "403" from the test network |
+| Itachi, Anitummy, AnimeSaga, AniLight, Hianimes, AnimeSuge, Animotvslash, Gogoanime (`gogoanime.or.at`) | Front ends of the MegaPlay or Anikoto players already covered by the plugins above |
+| Jutsu TV, YummyAnime, AnimeGO | Russian sites on the Kodik player, which is not read |
 
 Community plugins that load but did not pass the check: AniDream, AnimeFLV, AnimeSaturn
 (Mirror), AnimeToast, AnimeUnity (also needs Seanime's `$scannerUtils`), AnimeUnity (Mirror),

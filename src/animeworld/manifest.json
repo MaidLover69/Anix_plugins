@@ -1,0 +1,14 @@
+{
+  "id": "animeworld",
+  "name": "AnimeWorld",
+  "version": "1.0.0",
+  "description": "AnimeWorld: Italian subtitles and Italian dub (MP4).",
+  "author": "Anilili",
+  "type": "onlinestream-provider",
+  "language": "javascript",
+  "lang": "it",
+  "icon": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/public/animeworld.svg",
+  "website": "https://www.animeworld.ac",
+  "manifestURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animeworld/manifest.json",
+  "payloadURI": "https://raw.githubusercontent.com/MaidLover69/Anilili_Linux_plugins/main/src/animeworld/provider.js"
+}
