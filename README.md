@@ -17,6 +17,7 @@ To install the extensions bundle in Anix:
 2. Paste the Google Drive extensions link into the repository/link field:
    ```
    https://drive.google.com/file/d/1VxmOGtV5zRaqE3c5La_dCC6irHxJQyuL/view?usp=sharing
+   # Sorry I had to do this because of the codeberg strict restrictions and such and my github account got shadowban too :(
    ```
 3. Click **Add**. Anix will download the extensions bundle and register the plugins.
 4. Each plugin can be enabled or disabled individually from the settings panel.
