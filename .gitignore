@@ -1,0 +1,8 @@
+src/
+index.json
+dist/
+tools/
+public/
+.github/
+*.log
+.DS_Store
