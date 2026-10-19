@@ -5,6 +5,8 @@ Community provider extensions and specifications for **Anix**, the anime catalog
 [![Format](https://img.shields.io/badge/Specification-Seanime%20onlinestream--provider-805ad5?style=flat-square)](https://github.com/5rahim/seanime)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
+**GitHub:** <https://github.com/MaidLover69/Anix_plugins> • **Codeberg:** <https://codeberg.org/MaidLover69/Anix_plugins> • **Main App:** <https://github.com/MaidLover69/Anix>
+
 Anix supports modular JavaScript provider extensions conforming to Seanime's `onlinestream-provider` format.
 
 ---
@@ -17,7 +19,7 @@ To install the extensions bundle in Anix:
 2. Paste the Google Drive extensions link into the repository/link field:
    ```
    https://drive.google.com/file/d/1VxmOGtV5zRaqE3c5La_dCC6irHxJQyuL/view?usp=sharing
-   # Sorry I had to do this because of the codeberg strict restrictions and such and my github account got shadowban too :(
+   # Hosted on Google Drive; source repositories mirrored on GitHub & Codeberg
    ```
 3. Click **Add**. Anix will download the extensions bundle and register the plugins.
 4. Each plugin can be enabled or disabled individually from the settings panel.
