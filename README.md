@@ -35,6 +35,12 @@ To install the extensions bundle in Anix:
 
 ---
 
+## Release Notes
+
+A manifest may carry an optional `changelog`: a short text (up to 2000 characters) saying what changed in its `version`. When an update is available, Anix shows it behind the "Update available" badge in **Settings → Plugins**. `node tools/check.mjs` checks the field.
+
+---
+
 ## Disclaimer
 
 This repository provides documentation and links for community-maintained plugins. It does not host, stream, or distribute any copyrighted media files. Users and extension developers are solely responsible for compliance with applicable local laws.
