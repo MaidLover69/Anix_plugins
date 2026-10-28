@@ -1,0 +1,80 @@
+name: Broken extension
+description: An extension finds nothing, plays the wrong episode or language, or stopped working.
+labels: ["broken extension"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sites change often, so extensions break. These details let it be fixed quickly.
+        **First:** open Settings › Plugins in Anix and press **Refresh**. A fixed version may already be out.
+        Problems with the app itself (player, library, sign-in) go to the [Anix repository](https://github.com/MaidLover69/Anix/issues).
+  - type: input
+    id: extension
+    attributes:
+      label: Extension and version
+      description: As shown in Settings › Plugins.
+      placeholder: "AnimeToast 1.0.2"
+    validations:
+      required: true
+  - type: input
+    id: anix-version
+    attributes:
+      label: Anix version
+      description: Settings › About.
+      placeholder: "1.3.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What goes wrong?
+      options:
+        - It finds no anime at all
+        - It finds the wrong anime
+        - No episodes, or the wrong episode numbers
+        - The episode does not play
+        - Wrong language (sub or dub)
+        - Subtitles missing or wrong
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: anime
+    attributes:
+      label: Anime and episode
+      placeholder: "Frieren, episode 3"
+    validations:
+      required: true
+  - type: dropdown
+    id: track
+    attributes:
+      label: Sub or dub?
+      options:
+        - Sub
+        - Dub
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: others
+    attributes:
+      label: Do other extensions play this episode?
+      options:
+        - "Yes"
+        - "No, none of them"
+        - "I didn't try"
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Does the episode play on the website itself in a browser?
+      options:
+        - "Yes"
+        - "No"
+        - "I didn't try"
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message
+      description: |
+        The message Anix shows, or the extension's lines from Settings › System › Diagnostics report (logins, tokens and your home folder are removed from it).
+      render: text

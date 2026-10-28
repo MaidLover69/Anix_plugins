@@ -1,0 +1,101 @@
+name: Source request
+description: Ask for a new streaming site to be added as an extension.
+labels: ["source request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Please check the [open issues](https://github.com/MaidLover69/Anix_plugins/issues) first, in case someone already asked for this site.
+        A site can only be added if it works in a normal browser without a VPN and needs no captcha for every episode. See [CONTRIBUTING.md](https://github.com/MaidLover69/Anix_plugins/blob/main/CONTRIBUTING.md).
+  - type: input
+    id: site
+    attributes:
+      label: Site address
+      placeholder: "https://example.com"
+    validations:
+      required: true
+  - type: input
+    id: example
+    attributes:
+      label: Link to one anime on the site
+      description: The page of a single anime, so the layout can be checked.
+    validations:
+      required: true
+  - type: dropdown
+    id: sub-languages
+    attributes:
+      label: Subtitle languages on the site
+      multiple: true
+      options:
+        - None (dub only)
+        - English
+        - German
+        - French
+        - Spanish
+        - Portuguese
+        - Italian
+        - Arabic
+        - Hindi
+        - Indonesian
+        - Turkish
+        - Russian
+        - Other (write it below)
+    validations:
+      required: true
+  - type: dropdown
+    id: dub-languages
+    attributes:
+      label: Dub languages on the site
+      multiple: true
+      options:
+        - None (subtitles only)
+        - English
+        - German
+        - French
+        - Spanish
+        - Portuguese
+        - Italian
+        - Arabic
+        - Hindi
+        - Indonesian
+        - Turkish
+        - Russian
+        - Other (write it below)
+    validations:
+      required: true
+  - type: dropdown
+    id: access
+    attributes:
+      label: Does the site open without a VPN?
+      description: Region-locked sites cannot be built or tested.
+      options:
+        - "Yes, it opens normally"
+        - "Only in some countries (say which below)"
+        - "I don't know"
+    validations:
+      required: true
+  - type: dropdown
+    id: checks
+    attributes:
+      label: Does it show a check or captcha?
+      options:
+        - "No"
+        - "Once, when the site first opens"
+        - "Before every episode"
+        - "I don't know"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this site?
+      description: What does it have that the current extensions don't (a language, dubs, titles, quality)? Anything else useful goes here too.
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you send it
+      options:
+        - label: I checked that this site is not already an extension (Settings › Plugins in Anix).
+          required: true
+        - label: I understand extensions never solve captchas or get around region locks.
+          required: true

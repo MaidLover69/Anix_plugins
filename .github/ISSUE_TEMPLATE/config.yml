@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Problem with the Anix app
+    url: https://github.com/MaidLover69/Anix/issues/new/choose
+    about: The player, library, sign-in, settings or anything not tied to one source goes to the app repository.
+  - name: Security problem
+    url: https://github.com/MaidLover69/Anix_plugins/security/advisories/new
+    about: Report security problems privately, not in a public issue.

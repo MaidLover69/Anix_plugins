@@ -3,6 +3,6 @@ index.json
 dist/
 tools/
 public/
-.github/
+.github/workflows/
 *.log
 .DS_Store

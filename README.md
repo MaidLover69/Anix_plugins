@@ -41,6 +41,12 @@ A manifest may carry an optional `changelog`: a short text (up to 2000 character
 
 ---
 
+## Requests, Bugs and Contributing
+
+This repository is the place for **source requests** and **broken extensions**. Use the issue forms: **Source request** or **Broken extension**. Problems with the app itself go to the [Anix repository](https://github.com/MaidLover69/Anix/issues). See [CONTRIBUTING.md](CONTRIBUTING.md), the [Code of Conduct](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md).
+
+---
+
 ## Disclaimer
 
 This repository provides documentation and links for community-maintained plugins. It does not host, stream, or distribute any copyrighted media files. Users and extension developers are solely responsible for compliance with applicable local laws.
