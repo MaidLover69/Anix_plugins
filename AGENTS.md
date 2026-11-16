@@ -15,6 +15,7 @@ Plain Node 22, no `package.json`, no npm dependencies. Keep it that way.
 | `src/<id>/manifest.json`, `src/<id>/provider.js` | One first-party extension |
 | `public/<id>.svg` | Its icon |
 | `dist/anix-extensions.json` | Built bundle (the one file the app downloads) |
+| `retired/<id>/` | Retired extensions (site gone): out of `index.json` and the bundle, kept so they can come back. The app uninstalls an extension its index stops listing. To restore one, move it back to `src/`, bump its `version` and list it again |
 | `tools/check.mjs`, `bundle.mjs`, `health.mjs`, `run.mjs`, `lib/host.mjs` | Tooling, see below |
 | `.github/workflows/check.yml` | CI: `node tools/check.mjs`, then `node tools/bundle.mjs --check` |
 

@@ -6,3 +6,4 @@ public/
 .github/workflows/
 *.log
 .DS_Store
+retired/
